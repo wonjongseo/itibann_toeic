@@ -64,12 +64,10 @@ class JlptStepRepositroy {
             headTitle: day, step: stepCount, words: currentWords, scores: 0);
 
         String tempJlptStepKey = '$nLevel-$day-$stepCount';
-        print('tempJlptStepKey: ${tempJlptStepKey}');
         await box.put(tempJlptStepKey, tempJlptStep);
         stepCount++;
       }
       String stepCountKey = '$nLevel-$day';
-      print('stepCountKey: ${stepCountKey}');
       await box.put(stepCountKey, stepCount);
     }
     return totalCount;
@@ -77,7 +75,6 @@ class JlptStepRepositroy {
 
   List<JlptStep> getJlptStepByHeadTitle(String nLevel, String headTitle) {
     final box = Hive.box(JlptStep.boxKey);
-    print('nLevel: ${nLevel}');
     int headTitleStepCount = box.get('$nLevel-${int.parse(headTitle)}');
 
     List<JlptStep> jlptStepList = [];

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jonggack_toeic_japanese/common/admob/controller/ad_controller.dart';
+import 'package:jonggack_toeic_japanese/common/widget/apple_store_icon.dart';
 import 'package:jonggack_toeic_japanese/routes.dart';
 import 'package:jonggack_toeic_japanese/screen/home/home_screen.dart';
 import 'package:jonggack_toeic_japanese/common/admob/banner_ad/test_banner_ad_controller.dart';
@@ -16,9 +17,14 @@ import 'package:jonggack_toeic_japanese/screen/user/repository/user_repository.d
 import 'common/app_constant.dart';
 import 'screen/setting/services/setting_controller.dart';
 
-// Farebase Ios bunndle's name = com.wonjongseo.toeic-jonggack
-// Hive - flutter pub run build_runner build --delete-conflicting-outputs
+/**
+ いちばんTOEICスースコード
 
+ com.wonjongseo.itiban_toeic
+ */
+
+// Hive - flutter pub run build_runner build --delete-conflicting-outputs
+// Android Command - flutter build appbundle
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env");
@@ -62,12 +68,29 @@ class _AppState extends State<App> {
       await LocalReposotiry.init();
 
       if (await JlptStepRepositroy.isExistData() == false) {
-        jlptWordScroes.add(await JlptStepRepositroy.init('0'));
         jlptWordScroes.add(await JlptStepRepositroy.init('500'));
         jlptWordScroes.add(await JlptStepRepositroy.init('700'));
         jlptWordScroes.add(await JlptStepRepositroy.init('900'));
+        // 숙어
+        jlptWordScroes.add(await JlptStepRepositroy.init('5000'));
+        jlptWordScroes.add(await JlptStepRepositroy.init('7000'));
+        jlptWordScroes.add(await JlptStepRepositroy.init('9000'));
+
+        for (int i = 0; i < aaaaaaaaa.length; i++) {
+          jlptWordScroes.add(await JlptStepRepositroy.init(aaaaaaaaa[i]));
+        }
+        //
       } else {
-        jlptWordScroes = [732, 538, 935, 1648];
+        List<int> words = [538, 935, 1648];
+        jlptWordScroes.addAll(words);
+
+        List<int> idiom = [196, 301, 507];
+
+        jlptWordScroes.addAll(idiom);
+
+        List<int> yokuderuWord = List.generate(10, (index) => 300);
+
+        jlptWordScroes.addAll(yokuderuWord);
       }
 
       late User user;

@@ -66,21 +66,12 @@ class WelcomeWidget extends StatelessWidget {
                         ),
                   ),
                   Text(
-                    'いちばん',
+                    'いちばんTOEIC',
                     style: Theme.of(context).textTheme.headlineMedium!.copyWith(
                           color: Colors.red,
                           fontWeight: FontWeight.bold,
                           fontSize: Dimentions.width20,
                           fontFamily: AppFonts.japaneseFont,
-                        ),
-                  ),
-                  Text(
-                    'TOEIC',
-                    style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold,
-                          fontSize: Dimentions.width20,
-                          fontFamily: AppFonts.nanumGothic,
                         ),
                   ),
                 ],

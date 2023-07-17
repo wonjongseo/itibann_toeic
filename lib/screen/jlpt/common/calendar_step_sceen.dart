@@ -18,6 +18,7 @@ const String JLPT_CALENDAR_STEP_PATH = '/jlpt-calendar-step';
 class CalendarStepSceen extends StatelessWidget {
   late JlptStepController jlptWordController;
   late String chapter;
+
   late bool isSeenTutorial;
   UserController userController = Get.find<UserController>();
 
@@ -31,10 +32,18 @@ class CalendarStepSceen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String title = '';
+    if (jlptWordController.level.contains('~')) {
+      title = jlptWordController.level;
+    } else {
+      title =
+          '${int.parse(jlptWordController.level) < 1000 ? jlptWordController.level : (int.parse(jlptWordController.level) / 10).ceil()}${int.parse(jlptWordController.level) < 1000 ? '単語' : '熟語'} - チャプター${int.parse(chapter) + 1}';
+    }
+
     return Scaffold(
       bottomNavigationBar: const GlobalBannerAdmob(),
       appBar: AppBar(
-        title: Text('TOEIC 単語 - チャプター${int.parse(chapter) + 1}'),
+        title: Text(title),
         // actions: const [HeartCount()],
       ),
       body: Column(

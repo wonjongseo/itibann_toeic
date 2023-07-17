@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
-import 'package:jonggack_toeic_japanese/common/voca_card.dart';
 
 import 'package:jonggack_toeic_japanese/screen/jlpt/jlpt/jlpt_study/jlpt_study_controller_temp.dart';
 
 import '../../../../common/admob/banner_ad/global_banner_admob.dart';
 import '../../../../common/common.dart';
 import '../../../../common/widget/app_bar_progress_bar.dart';
-import '../../../../common/widget/heart_count.dart';
 import '../../../../config/colors.dart';
 import '../../../../tts_controller.dart';
 import '../../../setting/services/setting_controller.dart';
@@ -90,7 +88,6 @@ class JlptStudyScreen extends StatelessWidget {
 
                             if (result) {
                               bool result2 = await askToWatchMovieAndGetHeart(
-                                  // TODO
                                   title: const Text('テスト類型を選んでください。'),
                                   contentStrings: ['主観式', '客観式']);
                               wordController.goToTest(isSubjective: result2);
@@ -133,6 +130,10 @@ class JlptStudyScreen extends StatelessWidget {
                           // Get.to(() =>
                           //     ExapleWords(voca: controller.words[index]));
                           // },
+                          onLongPress: () {
+                            copyWord(
+                                controller.words[controller.currentIndex].word);
+                          },
                           child: Text(
                             controller.words[index].word,
                             style: Theme.of(context)
@@ -146,6 +147,10 @@ class JlptStudyScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 20),
                         InkWell(
+                            onLongPress: () {
+                              copyWord(controller
+                                  .words[controller.currentIndex].mean);
+                            },
                             onTap: () {
                               ttsController.speak(
                                   controller

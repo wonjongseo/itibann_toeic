@@ -110,21 +110,59 @@ class UserController extends GetxController {
   }
 
   void updateCurrentProgress(
-      TotalProgressType totalProgressType, int index, int addScore) {
+      TotalProgressType totalProgressType, String nLevel, int addScore) {
+    int index = 0;
     switch (totalProgressType) {
       case TotalProgressType.JLPT:
-        switch (index) {
-          case 0:
+        switch (nLevel) {
+          case '500':
             index = 0;
             break;
-          case 500:
+          case '700':
             index = 1;
             break;
-          case 700:
+          case '900':
             index = 2;
             break;
-          case 900:
+          case '5000':
             index = 3;
+            break;
+          case '7000':
+            index = 4;
+            break;
+          case '9000':
+            index = 5;
+            break;
+
+          case '1~300':
+            index = 6;
+            break;
+          case '301~600':
+            index = 7;
+            break;
+          case '601~900':
+            index = 8;
+            break;
+          case '901~1200':
+            index = 9;
+            break;
+          case '1201~1500':
+            index = 10;
+            break;
+          case '1501~1800':
+            index = 11;
+            break;
+          case '1801~2100':
+            index = 12;
+            break;
+          case '2101~2400':
+            index = 13;
+            break;
+          case '2401~2700':
+            index = 14;
+            break;
+          case '2701~3000':
+            index = 15;
             break;
         }
 

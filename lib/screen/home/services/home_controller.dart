@@ -66,6 +66,8 @@ class HomeController extends GetxController {
     super.onInit();
     currentPageIndex = LocalReposotiry.getUserJlptLevel();
     pageController = PageController(initialPage: currentPageIndex);
+    yokuderuTangoPageController =
+        PageController(initialPage: yokuderuTangoPageIndex);
     isSeenTutorial = LocalReposotiry.isSeenHomeTutorial();
   }
 
@@ -80,6 +82,9 @@ class HomeController extends GetxController {
   }
 
   void pageChange(int page) async {
+    if (page != 3) {
+      yokuderuTangoPageIndex = 0;
+    }
     currentPageIndex = page;
 
     pageController.jumpToPage(currentPageIndex);
@@ -95,13 +100,23 @@ class HomeController extends GetxController {
       duration: const Duration(milliseconds: 300),
     );
   }
+
+  int yokuderuTangoPageIndex = 0;
+  late PageController yokuderuTangoPageController;
+
+  void yokuderuTangoNextPage() {
+    if (yokuderuTangoPageIndex + 1 > 3) return;
+    yokuderuTangoPageIndex++;
+    yokuderuTangoPageController.nextPage(
+        duration: const Duration(milliseconds: 500), curve: Curves.linear);
+    update();
+  }
+
+  void yokuderuTangoPreviousPage() {
+    if (yokuderuTangoPageIndex - 1 < 0) return;
+    yokuderuTangoPageIndex--;
+    yokuderuTangoPageController.previousPage(
+        duration: const Duration(milliseconds: 500), curve: Curves.linear);
+    update();
+  }
 }
-
-/**
- var a = [
-  [],
-  [{},{},],
-  []
- ];
-
- */

@@ -28,7 +28,8 @@ class GraphicImage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          '확실하게',
+                          // '확실하게',
+                          '確実に、効率的に',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 20,
@@ -36,7 +37,7 @@ class GraphicImage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          '토익 単語를 외우자!',
+                          'TOEIC単語を覚えましょう！',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 26,
@@ -50,7 +51,7 @@ class GraphicImage extends StatelessWidget {
                     'いちばんTOEIC',
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 100,
+                      fontSize: 80,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -87,14 +88,16 @@ class AppleStoreIcon extends StatelessWidget {
                   children: [
                     const Icon(
                       Icons.chat_bubble_outline_rounded,
-                      size: 350,
+                      size: 380,
+                      color: Colors.deepPurpleAccent,
                     ),
                     // Plus(),
                     Positioned(
-                      top: 125,
+                      top: 145,
+                      left: 75,
                       // bottom: 210,
                       child: Text(
-                        'いちばん一番TOEIC',
+                        'いちばんTOEIC',
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.w800,

@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
+import 'package:jonggack_toeic_japanese/common/app_constant.dart';
 import 'package:jonggack_toeic_japanese/config/colors.dart';
 import 'package:jonggack_toeic_japanese/screen/setting/setting_screen.dart';
 import 'package:jonggack_toeic_japanese/screen/user/controller/user_controller.dart';
@@ -170,14 +171,15 @@ class WordListenScreen extends StatelessWidget {
                           ),
                           Slider(
                               label:
-                                  'チャプター ${(((tController.currentPageIndex) / 15)).ceil() + 1}',
-                              divisions:
-                                  wordListenController.words.length ~/ 15,
+                                  'チャプター ${(((tController.currentPageIndex) / AppConstant.MINIMUM_STEP_COUNT)).ceil() + 1}',
+                              divisions: wordListenController.words.length ~/
+                                      AppConstant.MINIMUM_STEP_COUNT +
+                                  1,
                               min: 0,
                               max:
                                   wordListenController.words.length.toDouble() -
                                       1,
-                              value: tController.currentPageIndex.toDouble(),
+                              value: (tController.currentPageIndex).toDouble(),
                               onChanged: (v) {
                                 tController.onPageChange(v.toInt());
                               }),

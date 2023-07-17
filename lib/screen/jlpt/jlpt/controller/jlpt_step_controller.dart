@@ -19,7 +19,6 @@ class JlptStepController extends GetxController {
   UserController userController = Get.find<UserController>();
 
   JlptStepController({required this.level}) {
-    print('level: ${level}');
     headTitleCount = jlptStepRepositroy.getCountByJlptHeadTitle(level);
 
     for (int i = 0; i < headTitleCount; i++) {
@@ -58,8 +57,7 @@ class JlptStepController extends GetxController {
     jlptSteps[step].scores = 0;
     update();
     jlptStepRepositroy.updateJlptStep(level, jlptSteps[step]);
-    userController.updateCurrentProgress(
-        TotalProgressType.JLPT, int.parse(level), -score);
+    userController.updateCurrentProgress(TotalProgressType.JLPT, level, -score);
   }
 
   void updateScore(int score, List<Question> wrongQestion) {
@@ -68,7 +66,7 @@ class JlptStepController extends GetxController {
 
     if (previousScore != 0) {
       userController.updateCurrentProgress(
-          TotalProgressType.JLPT, int.parse(level), -previousScore);
+          TotalProgressType.JLPT, level, -previousScore);
     }
 
     score = score + previousScore;
@@ -94,8 +92,7 @@ class JlptStepController extends GetxController {
     jlptSteps[step].scores = score;
     update();
     jlptStepRepositroy.updateJlptStep(level, jlptSteps[step]);
-    userController.updateCurrentProgress(
-        TotalProgressType.JLPT, int.parse(level), score);
+    userController.updateCurrentProgress(TotalProgressType.JLPT, level, score);
 
     // 처음 보던가
   }

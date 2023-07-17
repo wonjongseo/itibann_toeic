@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:jonggack_toeic_japanese/common/widget/dimentions.dart';
 
 import '../../config/colors.dart';
-import 'package:get/get.dart';
 import 'animated_circular_progressIndicator.dart';
 
 class PartOfInformation extends StatelessWidget {
@@ -37,7 +36,6 @@ class PartOfInformation extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
             ),
-            SizedBox(height: Dimentions.height10 / 2),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

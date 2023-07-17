@@ -52,8 +52,6 @@ class ListenController extends GetxController {
   void onPageChange(int value) {
     currentPageIndex = value;
     if (!userController.isUserPremieum() && jlptWordController.level == '1') {
-      // /AppConstant.MINIMUM_STEP_COUNT * AppConstant.RESTRICT_SUB_STEP_INDEX
-
       int limitedIndex = AppConstant.MINIMUM_STEP_COUNT *
               (AppConstant.RESTRICT_SUB_STEP_INDEX + 1) -
           1;

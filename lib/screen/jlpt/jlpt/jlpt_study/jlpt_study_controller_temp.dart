@@ -184,7 +184,7 @@ class JlptStudyControllerTemp extends GetxController {
           title: Text('$unKnownWordLength個が残っています。'),
           content: const Text(
             // '모르는 単語를 다시 보시겠습니까?',
-            '知らん単語をテストし直しますか？',
+            '知らん単語を見直しますか？',
             style: TextStyle(color: AppColors.scaffoldBackground),
           ),
         );

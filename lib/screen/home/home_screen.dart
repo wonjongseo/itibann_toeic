@@ -1,5 +1,7 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:jonggack_toeic_japanese/config/colors.dart';
 import 'package:jonggack_toeic_japanese/screen/home/components/welcome_widget.dart';
 import 'package:jonggack_toeic_japanese/screen/home/services/home_controller.dart';
 import 'package:jonggack_toeic_japanese/screen/my_voca/my_voca_sceen.dart';
@@ -21,15 +23,101 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       key: homeController.scaffoldKey,
       body: _body(context, homeController),
-      bottomNavigationBar: const GlobalBannerAdmob(),
+      bottomNavigationBar: _bottomNavigationBar(),
+    );
+  }
+
+  Column _bottomNavigationBar() {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        GetBuilder<HomeController>(builder: (homeController) {
+          return BottomNavigationBar(
+            currentIndex: homeController.currentPageIndex,
+            onTap: homeController.pageChange,
+            elevation: 0,
+            type: BottomNavigationBarType.fixed,
+            backgroundColor: Colors.transparent,
+            items: [
+              BottomNavigationBarItem(
+                  icon: Container(
+                    padding: const EdgeInsets.all(14),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: homeController.currentPageIndex == 0
+                          ? AppColors.primaryColor
+                          : AppColors.whiteGrey,
+                    ),
+                    child: const Text(
+                      '500点',
+                      style: TextStyle(
+                        color: AppColors.scaffoldBackground,
+                      ),
+                    ),
+                  ),
+                  label: ''),
+              BottomNavigationBarItem(
+                  icon: Container(
+                    padding: const EdgeInsets.all(14),
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: homeController.currentPageIndex == 1
+                            ? AppColors.primaryColor
+                            : AppColors.whiteGrey),
+                    child: const Text(
+                      '700点',
+                      style: TextStyle(
+                        color: AppColors.scaffoldBackground,
+                      ),
+                    ),
+                  ),
+                  label: ''),
+              BottomNavigationBarItem(
+                  icon: Container(
+                    padding: const EdgeInsets.all(14),
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: homeController.currentPageIndex == 2
+                            ? AppColors.primaryColor
+                            : AppColors.whiteGrey),
+                    child: const Text(
+                      '900点',
+                      style: TextStyle(
+                        color: AppColors.scaffoldBackground,
+                      ),
+                    ),
+                  ),
+                  label: ''),
+              BottomNavigationBarItem(
+                  icon: Container(
+                    padding: const EdgeInsets.all(14),
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: homeController.currentPageIndex == 3
+                            ? AppColors.primaryColor
+                            : AppColors.whiteGrey),
+                    child: const Text(
+                      '初心者',
+                      style: TextStyle(
+                        color: AppColors.scaffoldBackground,
+                      ),
+                    ),
+                  ),
+                  label: ''),
+            ],
+          );
+        }),
+        const GlobalBannerAdmob()
+      ],
     );
   }
 
   SafeArea _body(BuildContext context, HomeController homeController) {
+    Size size = MediaQuery.of(context).size;
+    print('size.height: ${size.height}');
     if (!homeController.isSeenTutorial) {
       homeController.settingFunctions();
     }
-    const edgeInsets = EdgeInsets.symmetric(horizontal: 20 * 0.7);
     return SafeArea(
       child: Column(
         children: [
@@ -41,56 +129,221 @@ class HomeScreen extends StatelessWidget {
           ),
           Expanded(
             flex: 15,
-            child: GetBuilder<UserController>(
-              builder: (userController) {
-                return Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 80),
-                  child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        PartOfInformation(
-                          goToSutdy: () => homeController.goToJlptStudy('0'),
-                          text: '素人向けの単語',
-                          currentProgressCount:
-                              userController.user.currentJlptWordScroes[0],
-                          totalProgressCount:
-                              userController.user.jlptWordScroes[0],
-                          edgeInsets: edgeInsets,
-                        ),
-                        PartOfInformation(
-                          goToSutdy: () => homeController.goToJlptStudy('500'),
-                          text: '500点向けの単語',
-                          currentProgressCount:
-                              userController.user.currentJlptWordScroes[1],
-                          totalProgressCount:
-                              userController.user.jlptWordScroes[2],
-                          edgeInsets: edgeInsets,
-                        ),
-                        PartOfInformation(
-                          goToSutdy: () => homeController.goToJlptStudy('700'),
-                          text: '700点向けの単語',
-                          currentProgressCount:
-                              userController.user.currentJlptWordScroes[2],
-                          totalProgressCount:
-                              userController.user.jlptWordScroes[2],
-                          edgeInsets: edgeInsets,
-                        ),
-                        PartOfInformation(
-                          goToSutdy: () => homeController.goToJlptStudy('900'),
-                          text: '900点向けの単語',
-                          currentProgressCount:
-                              userController.user.currentJlptWordScroes[3],
-                          totalProgressCount:
-                              userController.user.jlptWordScroes[3],
-                          edgeInsets: edgeInsets,
-                        )
-                      ],
-                    ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: PageView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: 4,
+                    controller: homeController.pageController,
+                    itemBuilder: (context, index) {
+                      const edgeInsets =
+                          EdgeInsets.symmetric(horizontal: 20 * 0.7);
+                      if (index == 3) {
+                        return GetBuilder<UserController>(
+                          builder: (userController) {
+                            return Container(
+                              padding: EdgeInsets.only(
+                                right: 20,
+                                left: 20,
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  GetBuilder<HomeController>(
+                                      builder: (homeController2) {
+                                    return Padding(
+                                      padding: EdgeInsets.symmetric(
+                                          vertical: size.height < 700 ? 0 : 10),
+                                      child: Stack(
+                                        alignment: AlignmentDirectional.center,
+                                        children: [
+                                          if (homeController2
+                                                  .yokuderuTangoPageIndex !=
+                                              0)
+                                            ZoomIn(
+                                              child: Align(
+                                                alignment: Alignment.centerLeft,
+                                                child: IconButton(
+                                                  onPressed: () {
+                                                    homeController2
+                                                        .yokuderuTangoPreviousPage();
+                                                  },
+                                                  icon: const Icon(
+                                                    Icons.arrow_back_ios,
+                                                    color: Colors.white,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          FadeInDown(
+                                            child: Align(
+                                              alignment: Alignment.center,
+                                              child: Text(
+                                                'よく出る単語3000個',
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: size.height < 700
+                                                      ? 14
+                                                      : 20,
+                                                  // fontSize: 14,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          if (homeController2
+                                                  .yokuderuTangoPageIndex !=
+                                              3)
+                                            ZoomIn(
+                                              child: Align(
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                child: IconButton(
+                                                  onPressed: () {
+                                                    homeController2
+                                                        .yokuderuTangoNextPage();
+                                                  },
+                                                  icon: const Icon(
+                                                    Icons.arrow_forward_ios,
+                                                    color: Colors.white,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                        ],
+                                      ),
+                                    );
+                                  }),
+                                  Expanded(
+                                    child: PageView.builder(
+                                      itemCount: 4,
+                                      physics:
+                                          const NeverScrollableScrollPhysics(),
+                                      controller: homeController
+                                          .yokuderuTangoPageController,
+                                      itemBuilder: (context, pageVeiwindex) {
+                                        if (pageVeiwindex == 3) {
+                                          return Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: List.generate(
+                                              1,
+                                              (index2) => PartOfInformation(
+                                                goToSutdy: () => homeController
+                                                    .goToJlptStudy(aaaaaaaaa[
+                                                        index2 +
+                                                            pageVeiwindex * 3]),
+                                                text:
+                                                    '${aaaaaaaaa[index2 + pageVeiwindex * 3]}単語',
+                                                currentProgressCount:
+                                                    userController.user
+                                                            .currentJlptWordScroes[
+                                                        index2 +
+                                                            6 +
+                                                            pageVeiwindex * 3],
+                                                totalProgressCount:
+                                                    userController.user
+                                                            .jlptWordScroes[
+                                                        index2 +
+                                                            6 +
+                                                            pageVeiwindex * 3],
+                                                edgeInsets: edgeInsets,
+                                              ),
+                                            ),
+                                          );
+                                        }
+                                        return Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: List.generate(
+                                            3,
+                                            (index2) => PartOfInformation(
+                                              goToSutdy: () =>
+                                                  homeController.goToJlptStudy(
+                                                      aaaaaaaaa[index2 +
+                                                          pageVeiwindex * 3]),
+                                              text:
+                                                  '${aaaaaaaaa[index2 + pageVeiwindex * 3]}単語',
+                                              currentProgressCount:
+                                                  userController.user
+                                                          .currentJlptWordScroes[
+                                                      index2 +
+                                                          6 +
+                                                          pageVeiwindex * 3],
+                                              totalProgressCount: userController
+                                                      .user.jlptWordScroes[
+                                                  index2 +
+                                                      6 +
+                                                      pageVeiwindex * 3],
+                                              edgeInsets: edgeInsets,
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                        );
+                      }
+                      String forScoreOFToeic = '500';
+                      String forScoreOFToeicId = '5000';
+
+                      switch (index) {
+                        case 0:
+                          forScoreOFToeic = '500';
+                          forScoreOFToeicId = '5000';
+                          break;
+
+                        case 1:
+                          forScoreOFToeic = '700';
+                          forScoreOFToeicId = '7000';
+                          break;
+
+                        case 2:
+                          forScoreOFToeic = '900';
+                          forScoreOFToeicId = '9000';
+                          break;
+                      }
+                      return GetBuilder<UserController>(
+                        builder: (userController) {
+                          return Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                PartOfInformation(
+                                  goToSutdy: () => homeController
+                                      .goToJlptStudy(forScoreOFToeic),
+                                  text: '$forScoreOFToeic点向けの単語',
+                                  currentProgressCount: userController
+                                      .user.currentJlptWordScroes[index],
+                                  totalProgressCount:
+                                      userController.user.jlptWordScroes[index],
+                                  edgeInsets: edgeInsets,
+                                ),
+                                PartOfInformation(
+                                  goToSutdy: () => homeController
+                                      .goToJlptStudy(forScoreOFToeicId),
+                                  text: '$forScoreOFToeic点向けの熟語',
+                                  currentProgressCount: userController
+                                      .user.currentJlptWordScroes[index + 3],
+                                  totalProgressCount: userController
+                                      .user.jlptWordScroes[index + 3],
+                                  edgeInsets: edgeInsets,
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                      );
+                    },
                   ),
-                );
-              },
+                ),
+              ],
             ),
           ),
           Expanded(
@@ -129,44 +382,24 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           const Spacer(flex: 1),
-          // Expanded(
-          //   flex: 1,
-          //   child: TextButton(
-          //     child: const Row(
-          //       mainAxisAlignment: MainAxisAlignment.end,
-          //       children: [
-          //         Text(
-          //           '일본어 공부하러 가기',
-          //           style: TextStyle(
-          //             color: AppColors.primaryColor,
-          //           ),
-          //         ),
-          //         SizedBox(width: 10),
-          //         Icon(
-          //           Icons.arrow_forward,
-          //           color: AppColors.primaryColor,
-          //         )
-          //       ],
-          //     ),
-          //     onPressed: () {
-          //       if (GetPlatform.isIOS) {
-          //         launchUrl(
-          //             Uri.parse('https://apps.apple.com/app/id6449939963'));
-          //       } else if (GetPlatform.isAndroid) {
-          //         launchUrl(Uri.parse(
-          //             'https://play.google.com/store/apps/details?id=com.wonjongseo.jlpt_jonggack'));
-          //       } else {
-          //         launchUrl(Uri.parse(
-          //             'https://play.google.com/store/apps/details?id=com.wonjongseo.jlpt_jonggack'));
-          //       }
-          //     },
-          //   ),
-          // )
         ],
       ),
     );
   }
 }
+
+List<String> aaaaaaaaa = [
+  '1~300',
+  '301~600',
+  '601~900',
+  '901~1200',
+  '1201~1500',
+  '1501~1800',
+  '1801~2100',
+  '2101~2400',
+  '2401~2700',
+  '2701~3000',
+];
 
 List<String> alpahbets = [
   'a',

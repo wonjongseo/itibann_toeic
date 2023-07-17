@@ -34,12 +34,18 @@ class BookStepScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('level: ${level}');
     Get.put(TtsController());
 
+    String title = '';
+    if (level.contains('~')) {
+      title = level;
+    } else {
+      title =
+          '${int.parse(level) < 1000 ? level : (int.parse(level) / 10).ceil()}向けの${int.parse(level) < 1000 ? '単語' : '熟語'}';
+    }
     return Scaffold(
       appBar: AppBar(
-        title: Text('TOEIC ${level == '0' ? '素人' : level}向けの単語'),
+        title: Text(title),
         // actions: const [HeartCount()],
       ),
       body: GetBuilder<JlptStepController>(builder: (context) {

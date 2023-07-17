@@ -23,12 +23,12 @@ class AdUnitId {
       banner = {
         'ios': 'ca-app-pub-9712392194582442/2938021192', //ok
 
-        'android': ''
+        'android': 'ca-app-pub-9712392194582442/5993830882' //ok
       };
 
       interstitial = {
         'ios': 'ca-app-pub-9712392194582442/8458258414', //ok
-        'android': '',
+        'android': 'ca-app-pub-9712392194582442/3295515356', //ok
         //ok
       };
 
@@ -39,16 +39,16 @@ class AdUnitId {
 
       nativeAdvanced = {
         'ios': 'ca-app-pub-9712392194582442/9112864537', // ok
-        'android': ''
+        'android': 'ca-app-pub-9712392194582442/1269215293' // ok
       };
       rewarded = {
         'ios': 'ca-app-pub-9712392194582442/2739027877',
-        'android': '',
+        'android': 'ca-app-pub-9712392194582442/5248822902',
       };
 
       rewardedInterstitial = {
         'ios': 'ca-app-pub-9712392194582442/1551683683',
-        'android': '',
+        'android': 'ca-app-pub-9712392194582442/8887904765',
       };
 
       // nativeAdvancedVideo = {

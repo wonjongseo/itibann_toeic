@@ -226,7 +226,7 @@ class MyVocaController extends GetxController {
               mainAxisSize: MainAxisSize.min,
               children: [
                 FlipButton(
-                    text: '암기 単語',
+                    text: '暗記 単語',
                     onTap: () {
                       isOnlyKnown = true;
                       isOnlyUnKnown = false;
@@ -235,7 +235,7 @@ class MyVocaController extends GetxController {
                     }),
                 const SizedBox(width: 10),
                 FlipButton(
-                    text: '미암기 単語',
+                    text: '未暗記 単語',
                     onTap: () {
                       isOnlyUnKnown = true;
                       isOnlyKnown = false;
@@ -249,7 +249,7 @@ class MyVocaController extends GetxController {
               mainAxisSize: MainAxisSize.min,
               children: [
                 FlipButton(
-                    text: '모든 単語',
+                    text: '全ての単語',
                     onTap: () {
                       isOnlyKnown = false;
 

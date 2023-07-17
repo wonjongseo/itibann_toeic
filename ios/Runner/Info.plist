@@ -13,12 +13,13 @@
     </dict>
   </array>
 
-
+	<key>NSPhotoLibraryUsageDescription</key>
+  	<string>Photo Library Access Warning</string>
 
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>一番TOEIC</string>
+	<string>いちばんTOEIC</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

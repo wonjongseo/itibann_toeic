@@ -303,18 +303,12 @@ class JlptTestController extends GetxController
 
   bool formattingQuestion(String correct, String answer) {
     correct.trim();
-
     answer.trim();
 
-    correct = correct.replaceAll('-', '');
-    correct = correct.replaceAll('ー', '');
-    correct = correct.replaceAll('　', '');
+    print('correct: ${correct}');
+    print('  answer: ${answer}');
     correct = correct.replaceAll(' ', '');
-
-    answer = answer.replaceAll('-', '');
-    answer = answer.replaceAll('ー', '');
     answer = answer.replaceAll(' ', '');
-    answer = answer.replaceAll('　', '');
 
     return answer == correct;
   }

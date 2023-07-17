@@ -50,7 +50,7 @@ class JlptTestCard extends StatelessWidget {
                   const SizedBox(height: 10),
                   if (qnController.isWrong)
                     Text(
-                      '정답: ${qnController.correctQuestion.word}',
+                      '正解: ${qnController.correctQuestion.word}',
                       style: const TextStyle(
                           color: Color(0xFFE92E30), fontSize: 16),
                     )

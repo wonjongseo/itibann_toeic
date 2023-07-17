@@ -192,7 +192,8 @@ class MyVocaPage extends StatelessWidget {
                                             builder: (context, setState) {
                                               return AlertDialog(
                                                 title: const Text(
-                                                    '테스트 종류를 선택 해주세요.',
+                                                    // '테스트 종류를 선택 해주세요.',
+                                                    'テスト類型を選んでください。',
                                                     style: TextStyle(
                                                       color: AppColors
                                                           .scaffoldBackground,
@@ -220,7 +221,7 @@ class MyVocaPage extends StatelessWidget {
                                                               .spaceBetween,
                                                       children: [
                                                         const Text(
-                                                          '미암기 単語',
+                                                          '未暗記の単語',
                                                           style: TextStyle(
                                                             color: AppColors
                                                                 .scaffoldBackground,
@@ -244,7 +245,7 @@ class MyVocaPage extends StatelessWidget {
                                                               .spaceBetween,
                                                       children: [
                                                         const Text(
-                                                          '암기한 単語',
+                                                          '暗記の単語',
                                                           style: TextStyle(
                                                             color: AppColors
                                                                 .scaffoldBackground,
@@ -314,8 +315,10 @@ class MyVocaPage extends StatelessWidget {
                                                             Get.back();
                                                             bool isSubjective =
                                                                 await askToWatchMovieAndGetHeart(
-                                                                    title: const Text(
-                                                                        'テスト 類型을 선택해주세요.'),
+                                                                    title:
+                                                                        const Text(
+                                                                      'テスト類型を選んでください。',
+                                                                    ),
                                                                     contentStrings: [
                                                                   '主観式',
                                                                   '客観式'
@@ -428,8 +431,8 @@ class MyVocaPage extends StatelessWidget {
                                                   icon: Icons.check,
                                                   label: value[index].isKnown ==
                                                           true
-                                                      ? '미암기'
-                                                      : '암기',
+                                                      ? '未暗記'
+                                                      : '暗記',
                                                 ),
                                               ],
                                             ),
@@ -448,7 +451,7 @@ class MyVocaPage extends StatelessWidget {
                                                       const Color(0xFFFE4A49),
                                                   foregroundColor: Colors.white,
                                                   icon: Icons.delete,
-                                                  label: '삭제',
+                                                  label: '削除',
                                                 ),
                                               ],
                                             ),
