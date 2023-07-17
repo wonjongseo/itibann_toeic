@@ -1,4 +1,4 @@
-package com.wonjongseo.itibann_toeic
+package com.wonjongseo.itiban_toeic
 
 import io.flutter.embedding.android.FlutterActivity
 
