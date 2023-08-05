@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:jonggack_toeic_japanese/screen/user/controller/user_controller.dart';
 import 'package:jonggack_toeic_japanese/tts_controller.dart';
 
-import '../common/app_constant.dart';
 import '../model/word.dart';
 import 'jlpt/jlpt/controller/jlpt_step_controller.dart';
 
@@ -51,19 +50,6 @@ class ListenController extends GetxController {
 
   void onPageChange(int value) {
     currentPageIndex = value;
-    if (!userController.isUserPremieum() && jlptWordController.level == '1') {
-      int limitedIndex = AppConstant.MINIMUM_STEP_COUNT *
-              (AppConstant.RESTRICT_SUB_STEP_INDEX + 1) -
-          1;
-      if (currentPageIndex > limitedIndex) {
-        currentPageIndex = limitedIndex;
-        isAutoPlay = false;
-        update();
-        userController.openPremiumDialog('N1급 모든 単語 활성화');
-
-        return;
-      }
-    }
 
     update();
   }

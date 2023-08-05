@@ -12,7 +12,6 @@ class TutorialText extends StatelessWidget {
       children: [
         Text(
           title,
-          //"JLPT 레벨 선택",
           style: const TextStyle(
               fontWeight: FontWeight.bold, color: Colors.white, fontSize: 20.0),
         ),

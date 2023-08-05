@@ -64,7 +64,7 @@ class JlptStudyScreen extends StatelessWidget {
                             wordController.saveCurrentWord();
                           },
                           child: const Text(
-                            '貯蔵',
+                            '保存',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: AppColors.whiteGrey,

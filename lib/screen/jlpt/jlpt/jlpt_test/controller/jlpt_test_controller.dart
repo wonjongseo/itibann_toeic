@@ -302,11 +302,33 @@ class JlptTestController extends GetxController
   }
 
   bool formattingQuestion(String correct, String answer) {
+    correct = correct.toLowerCase();
+    answer = answer.toLowerCase();
+
     correct.trim();
     answer.trim();
 
-    print('correct: ${correct}');
-    print('  answer: ${answer}');
+    correct = correct.replaceAll('~', '');
+    answer = answer.replaceAll('~', '');
+
+    correct = correct.replaceAll('〜', '');
+    answer = answer.replaceAll('〜', '');
+
+    correct = correct.replaceAll(',', '');
+    answer = answer.replaceAll(',', '');
+
+    correct = correct.replaceAll('、', '');
+    answer = answer.replaceAll('、', '');
+
+    correct = correct.replaceAll('?', '');
+    answer = answer.replaceAll('?', '');
+
+    correct = correct.replaceAll('？', '');
+    answer = answer.replaceAll('？', '');
+
+    correct = correct.replaceAll('.', '');
+    answer = answer.replaceAll('.', '');
+
     correct = correct.replaceAll(' ', '');
     answer = answer.replaceAll(' ', '');
 
@@ -352,7 +374,7 @@ class JlptTestController extends GetxController
       // AD
 
       if (adController.randomlyPassAd() || !isTestAgain) {
-        adController.showRewardedInterstitialAd();
+        adController.showIntersistialAd();
       }
 
       if (!isMyWordTest) {

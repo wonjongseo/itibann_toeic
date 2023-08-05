@@ -23,8 +23,8 @@ class HomeController extends GetxController {
     await Future.delayed(const Duration(milliseconds: 500));
 
     bool isJapaneseSoundActive2 = await alertSetting(
-        title: '自動的に知らない単語を貯蔵しますか？',
-        content: '活性化したら、学習ページで「知らん」ボタンを押すと、自動的に「よく間違う単語帳」に貯蔵されます。');
+        title: '自動的に知らない単語を保存しますか？',
+        content: '活性化したら、学習ページで「知らん」ボタンを押すと、自動的に「よく間違う単語帳」に保存されます。');
 
     if (isJapaneseSoundActive2) {
       if (!settingController.isAutoSave) {

@@ -47,7 +47,6 @@ Future<bool> alertSetting(
   );
 }
 
-// 광고를 볼지 물어보고 하트를 제공
 Future<bool> askToWatchMovieAndGetHeart(
     {Text? title,
     Text? content,

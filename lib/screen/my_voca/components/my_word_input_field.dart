@@ -70,7 +70,7 @@ class MyWordInputField extends StatelessWidget {
             child: ElevatedButton(
               onPressed: saveWord,
               child: const Text(
-                '貯蔵',
+                '保存',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
             ),

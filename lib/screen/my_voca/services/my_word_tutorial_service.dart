@@ -74,7 +74,7 @@ class MyVocaTutorialService {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '自分の単語を貯蔵',
+                    '自分の単語を保存',
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
@@ -94,7 +94,7 @@ class MyVocaTutorialService {
                               fontWeight: FontWeight.bold,
                               fontSize: 17,
                             )),
-                        TextSpan(text: 'を入力して自分の単語を貯蔵ができます。')
+                        TextSpan(text: 'を入力して自分の単語を保存ができます。')
                       ],
                     ),
                   ),
@@ -237,7 +237,7 @@ class MyVocaTutorialService {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Excelファイルデータを自分の単語帳へ貯蔵',
+                    'Excelファイルデータを自分の単語帳へ保存',
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
@@ -259,7 +259,7 @@ class MyVocaTutorialService {
                             )),
                         TextSpan(text: 'の単語を'),
                         TextSpan(
-                            text: '貯蔵',
+                            text: '保存',
                             style: TextStyle(
                               color: Colors.red,
                               fontWeight: FontWeight.bold,

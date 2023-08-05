@@ -114,7 +114,6 @@ class HomeScreen extends StatelessWidget {
 
   SafeArea _body(BuildContext context, HomeController homeController) {
     Size size = MediaQuery.of(context).size;
-    print('size.height: ${size.height}');
     if (!homeController.isSeenTutorial) {
       homeController.settingFunctions();
     }

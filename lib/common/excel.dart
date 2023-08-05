@@ -42,7 +42,7 @@ Future<int> postExcelData() async {
       }
       Get.snackbar(
         '成功',
-        '$savedWordNumber個の単語が貯蔵されました。（$alreadySaveWordNumber個の単語が既に貯蔵られています。)',
+        '$savedWordNumber個の単語が保存されました。（$alreadySaveWordNumber個の単語が既に保存られています。)',
         snackPosition: SnackPosition.BOTTOM,
         backgroundColor: Colors.white.withOpacity(0.5),
         duration: const Duration(seconds: 4),
@@ -51,7 +51,7 @@ Future<int> postExcelData() async {
     } catch (e) {
       Get.snackbar(
         '成功',
-        '$savedWordNumber個の単語が貯蔵されました。（$alreadySaveWordNumber個の単語が既に貯蔵られています。)',
+        '$savedWordNumber個の単語が保存されました。（$alreadySaveWordNumber個の単語が既に保存られています。)',
         snackPosition: SnackPosition.BOTTOM,
         backgroundColor: Colors.white.withOpacity(0.5),
         duration: const Duration(seconds: 4),

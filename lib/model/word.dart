@@ -43,14 +43,14 @@ class Word extends HiveObject {
     } else if (nLevel == '900') {
       selectedJlptLevelJson = toeicWordFor900;
     }
-    // 숙어
+    // 熟語
     else if (nLevel == '5000') {
       selectedJlptLevelJson = toeicWordFor500Idiom;
     } else if (nLevel == '7000') {
       selectedJlptLevelJson = toeicWordFor700Idiom;
     } else if (nLevel == '9000') {
       selectedJlptLevelJson = toeicWordFor900Idiom;
-      // aaa
+      // よく出る単語3000個
     } else if (nLevel == '1~300') {
       selectedJlptLevelJson = toeicWordFor1To300;
     } else if (nLevel == '301~600') {

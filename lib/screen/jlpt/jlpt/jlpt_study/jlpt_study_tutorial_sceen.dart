@@ -296,7 +296,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
             TargetContent(
               align: ContentAlign.bottom,
               child: const TutorialText(
-                  title: '[よく間違う単語帳]', subTitles: ['に単語が貯蔵されます。']),
+                  title: '[よく間違う単語帳]', subTitles: ['に単語が保存されます。']),
             )
           ],
         ),
@@ -340,7 +340,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                       child: OutlinedButton(
                         onPressed: () {},
                         child: Text(
-                          '貯蔵',
+                          '保存',
                           key: saveKey,
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,

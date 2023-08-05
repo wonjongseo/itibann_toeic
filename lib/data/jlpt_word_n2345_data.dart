@@ -553,6 +553,7 @@ List<List<Map<String, String>>> toeicWordFor500 = //
     {"word": "regulations", "mean": "規制"}
   ]
 ];
+
 List<List<Map<String, String>>> toeicWordFor700 = //
     [
   [
@@ -1296,7 +1297,7 @@ List<List<Map<String, String>>> toeicWordFor700 = //
   [
     {"word": "probability", "mean": "確率，可能性"},
     {"word": "expiration", "mean": "期限切れ，（契約などの）終了"},
-    {"word": "applcation", "mean": "申し込み，応用"},
+    {"word": "application", "mean": "申し込み，応用"},
     {"word": "unload", "mean": "（荷物など）を降ろす"},
     {"word": "theme", "mean": "テーマ，論題"},
     {"word": "abolish", "mean": "を廃止する"},
@@ -1511,10 +1512,10 @@ List<List<Map<String, String>>> toeicWordFor700 = //
     {"word": "parcel", "mean": "小包"},
     {"word": "outlaw", "mean": "無法者"},
     {"word": "benchmark", "mean": "基準"},
-    {"word": "resolution"},
-    {"word": "分解，解像度，決心"}
+    {"word": "resolution", "mean": "分解，解像度，決心"},
   ]
 ];
+
 List<List<Map<String, String>>> toeicWordFor900 = //
     [
   [
@@ -1571,7 +1572,7 @@ List<List<Map<String, String>>> toeicWordFor900 = //
     {"word": "realistic", "mean": "現実的な"},
     {"word": "wellness", "mean": "健康"},
     {"word": "mammal", "mean": "哺乳動物"},
-    {"word": "nonrefundable", "mean": "返金不可の"},
+    {"word": "non refundable", "mean": "返金不可の"},
     {"word": "interrupt", "mean": "の邪魔をする，を中断させる"},
     {"word": "statistics", "mean": "統計"},
     {"word": "attire", "mean": "服装"},
@@ -1752,7 +1753,7 @@ List<List<Map<String, String>>> toeicWordFor900 = //
     {"word": "absolutely", "mean": "絶対に"},
     {"word": "resurfaced", "mean": "再浮上した"},
     {"word": "scale", "mean": "規模"},
-    {"word": "courtecy", "mean": "礼儀"},
+    {"word": "courtesy", "mean": "礼儀"},
     {"word": "dissatisfaction", "mean": "不満"},
     {"word": "proportion", "mean": "比率，割合"},
     {"word": "accessible", "mean": "行きやすい"},
@@ -1847,7 +1848,7 @@ List<List<Map<String, String>>> toeicWordFor900 = //
   ],
   [
     {"word": "atlantic", "mean": "大西洋の"},
-    {"word": "signiflcantly", "mean": "著しく"},
+    {"word": "significantly", "mean": "著しく"},
     {"word": "last", "mean": "持続する"},
     {"word": "abundance", "mean": "豊富さ"},
     {"word": "prime", "mean": "主要な，最重要の"},
@@ -1894,7 +1895,7 @@ List<List<Map<String, String>>> toeicWordFor900 = //
     {"word": "complication", "mean": "複雑さ、混乱"},
     {"word": "complicated", "mean": "複雑な"},
     {"word": "complicate", "mean": "複雑にする"},
-    {"word": "afiix", "mean": "添付する，添える"},
+    {"word": "affix", "mean": "添付する，添える"},
     {"word": "justification", "mean": "正当化"},
     {"word": "subsequent", "mean": "その次の"},
     {"word": "withstand", "mean": "耐える"},
@@ -2490,7 +2491,7 @@ List<List<Map<String, String>>> toeicWordFor900 = //
     {"word": "last-minute", "mean": "間際での"},
     {"word": "immense", "mean": "非常に大きな、巨大な"},
     {"word": "agreeable", "mean": "快適な、心地良い"},
-    {"word": "prsuasive", "mean": "説得力のある"},
+    {"word": "persuasive", "mean": "説得力のある"},
     {"word": "noted", "mean": "有名な"},
     {"word": "unpredictable", "mean": "予測できない、法外な"},
     {"word": "timeline", "mean": "予定表"},
@@ -2647,7 +2648,7 @@ List<List<Map<String, String>>> toeicWordFor900 = //
     {"word": "sparkle", "mean": "輝く"},
     {"word": "meantime", "mean": "その間に/合間"},
     {"word": "subscriber", "mean": "購読者，加入者"},
-    {"word": "occation", "mean": "場合，とき，機会"},
+    {"word": "occasion", "mean": "場合，とき，機会"},
     {"word": "reimbursement", "mean": "返済，償還"},
     {"word": "conservation", "mean": "保存，管理，維持"},
     {"word": "disassemble", "mean": "分解する，解体する"},
@@ -4174,7 +4175,6 @@ List<List<Map<String, String>>> toeicWordFor500Idiom = //
 List<List<Map<String, String>>> toeicWordFor700Idiom = //
     [
   [
-    {"word": "英語", "mean": "日本語"},
     {"word": "a couple of", "mean": "２つの，数個の"},
     {"word": "take care", "mean": "気を付けて，注意する"},
     {"word": "get back to", "mean": "後で電話をする"},
@@ -4190,7 +4190,7 @@ List<List<Map<String, String>>> toeicWordFor700Idiom = //
     {"word": "in the middle of", "mean": "の途中で"},
     {"word": "for example", "mean": "例えば"},
     {"word": "required for", "mean": "を要求される"},
-    {"word": "too, to", "mean": "すぎて，できない"},
+    {"word": "too～to", "mean": "すぎて～できない"},
     {"word": "for sale", "mean": "セール中"},
     {"word": "lead to", "mean": "を導く"},
     {"word": "as of", "mean": "の時点で"},
@@ -4210,7 +4210,7 @@ List<List<Map<String, String>>> toeicWordFor700Idiom = //
     {"word": "put up", "mean": "上げる，掲示する"},
     {"word": "along with", "mean": "と一緒に，と共に"},
     {"word": "leave a message", "mean": "伝言を残す"},
-    {"word": "end up", "mean": "最後は，になる"},
+    {"word": "end up", "mean": "最後は〜になる"},
     {"word": "take over", "mean": "引き継ぐ，引き取る"},
     {"word": "at any time", "mean": "いつでも"},
     {"word": "in a row", "mean": "一列に並んだ，連続的に"},
@@ -4221,7 +4221,7 @@ List<List<Map<String, String>>> toeicWordFor700Idiom = //
     {"word": "around the corner", "mean": "間もなく，曲がり角のあたりに"},
     {"word": "at times", "mean": "時々"},
     {"word": "keep in touch", "mean": "連絡を取る"},
-    {"word": "make a decisiion", "mean": "決心する"},
+    {"word": "make a decision", "mean": "決心する"},
     {"word": "no later than", "mean": "までに，遅くとも"},
     {"word": "out of order", "mean": "故障中で，順番が乱れて"},
     {"word": "move on", "mean": "次へ進む"},
@@ -4440,7 +4440,7 @@ List<List<Map<String, String>>> toeicWordFor700Idiom = //
     {"word": "for sure", "mean": "確かに，確実に"},
     {"word": "pick out", "mean": "選び出す"},
     {"word": "advise to", "mean": "勧める，忠告する"},
-    {"word": "a large amout of", "mean": "大量の，非常に多くの"},
+    {"word": "a large amount of", "mean": "大量の，非常に多くの"},
     {"word": "at the top of", "mean": "頂上で"},
     {"word": "vote for", "mean": "に賛成する，に投票する"},
     {"word": "in terms of", "mean": "の点から，に関して"},

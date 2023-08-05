@@ -17,6 +17,17 @@ class WelcomeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int dateTime = DateTime.now().hour;
+    String aisatuMessage = 'Morning!';
+
+    if (dateTime >= 0 && dateTime <= 9) {
+      aisatuMessage = 'Morning!';
+    } else if (dateTime >= 10 && dateTime <= 18) {
+      aisatuMessage = 'Afternoon!';
+    } else if (dateTime > 18 && dateTime <= 24) {
+      aisatuMessage = 'Evening!';
+    }
+
     return Container(
       width: double.infinity,
       height: Dimentions.height153,
@@ -45,7 +56,7 @@ class WelcomeWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Good Morning!',
+                'Good $aisatuMessage',
                 style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                       color: AppColors.scaffoldBackground,
                       fontWeight: FontWeight.w800,

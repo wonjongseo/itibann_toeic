@@ -50,7 +50,7 @@ class SettingScreen extends StatelessWidget {
                   SettingSwitch(
                     isOn: settingController.isAutoSave,
                     onChanged: (value) => settingController.flipAutoSave(),
-                    text: '知らん・間違いの単語を自動的に貯蔵',
+                    text: '知らん・間違いの単語を自動的に保存',
                   ),
                   SettingSwitch(
                     isOn: settingController.isEnabledEnglishSound,

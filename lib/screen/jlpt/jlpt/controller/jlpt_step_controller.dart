@@ -116,14 +116,7 @@ class JlptStepController extends GetxController {
     if (userController.user.isFake) {
       return false;
     }
-    // 무료버전일 경우.
-    if ((level == '1' &&
-        !userController.isUserPremieum() &&
-        subStep > AppConstant.RESTRICT_SUB_STEP_INDEX)) {
-      userController.openPremiumDialog('N1급 모든 単語 활성화',
-          messages: ['N1 単語의 다른 チャプター에서 무료버전의 일부를 학습 할 수 있습니다.']);
-      return true;
-    }
+
     return false;
   }
 }

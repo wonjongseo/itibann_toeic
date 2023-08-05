@@ -39,7 +39,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
       // if (qnController.userController.clickUnKnownButtonCount > 3) {
       if (qnController.userController.clickUnKnownButtonCount > randomNumber) {
         bool result = await askToWatchMovieAndGetHeart(
-          title: const Text('貯蔵した単語を復習しに行きましょう！'),
+          title: const Text('保存した単語を復習しに行きましょう！'),
           content: const Text(
             'よく間違う単語帳へ行って、単語を復習しますか？',
             style: TextStyle(color: AppColors.scaffoldBackground),

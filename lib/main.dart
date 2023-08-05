@@ -71,7 +71,7 @@ class _AppState extends State<App> {
         jlptWordScroes.add(await JlptStepRepositroy.init('500'));
         jlptWordScroes.add(await JlptStepRepositroy.init('700'));
         jlptWordScroes.add(await JlptStepRepositroy.init('900'));
-        // 숙어
+        // 熟語
         jlptWordScroes.add(await JlptStepRepositroy.init('5000'));
         jlptWordScroes.add(await JlptStepRepositroy.init('7000'));
         jlptWordScroes.add(await JlptStepRepositroy.init('9000'));
@@ -81,6 +81,7 @@ class _AppState extends State<App> {
         }
         //
       } else {
+        //　よく出る3000個単語
         List<int> words = [538, 935, 1648];
         jlptWordScroes.addAll(words);
 

@@ -28,7 +28,6 @@ class GraphicImage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          // '확실하게',
                           '確実に、効率的に',
                           style: TextStyle(
                             color: Colors.black,

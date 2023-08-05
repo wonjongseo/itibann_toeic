@@ -56,7 +56,7 @@ class MyWord {
     if (!MyWordRepository.saveMyWord(newMyWord)) {
       if (!Get.isSnackbarOpen) {
         Get.snackbar(
-          '${word.word}が既に貯蔵されています。',
+          '${word.word}が既に保存されています。',
           '単語帳から確認することができます。',
           snackPosition: SnackPosition.BOTTOM,
           backgroundColor: Colors.white.withOpacity(0.5),
@@ -67,7 +67,7 @@ class MyWord {
     }
     if (!Get.isSnackbarOpen) {
       Get.snackbar(
-        '${word.word}が既に貯蔵されました。',
+        '${word.word}が既に保存されました。',
         '単語帳から確認することができます。',
         backgroundColor: Colors.white.withOpacity(0.5),
         snackPosition: SnackPosition.BOTTOM,

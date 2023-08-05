@@ -191,16 +191,15 @@ class MyVocaPage extends StatelessWidget {
                                           return StatefulBuilder(
                                             builder: (context, setState) {
                                               return AlertDialog(
-                                                title: const Text(
-                                                    // '테스트 종류를 선택 해주세요.',
-                                                    'テスト類型を選んでください。',
-                                                    style: TextStyle(
-                                                      color: AppColors
-                                                          .scaffoldBackground,
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      fontSize: 18,
-                                                    )),
+                                                title:
+                                                    const Text('テスト類型を選んでください。',
+                                                        style: TextStyle(
+                                                          color: AppColors
+                                                              .scaffoldBackground,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          fontSize: 18,
+                                                        )),
                                                 content: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.min,
@@ -500,7 +499,7 @@ class MyVocaPage extends StatelessWidget {
                                                       alignment:
                                                           Alignment.bottomRight,
                                                       child: Text(
-                                                          '${value[index].createdAtString()}に貯蔵済み'),
+                                                          '${value[index].createdAtString()}に保存済み'),
                                                     ),
                                                 ],
                                               ),
@@ -549,14 +548,25 @@ class MyVocaPage extends StatelessWidget {
       ),
     );
     if (result != null) {
-      int savedWordNumber = await postExcelData();
-      adController!.showIntersistialAd();
-      if (savedWordNumber != 0) {
-        Get.offNamed(
-          MY_VOCA_PATH,
-          arguments: {MY_VOCA_TYPE: MyVocaEnum.MY_WORD},
-          preventDuplicates: false,
-        );
+      bool result2 = await askToWatchMovieAndGetHeart(
+        title: const Text('アクセル単語を保存する'),
+        content: const Text(
+          '広告を見てからアクセルの単語をいちばんTOEICに保存しますか？',
+          style: TextStyle(color: AppColors.scaffoldBackground),
+        ),
+      );
+
+      if (result2) {
+        int savedWordNumber = await postExcelData();
+
+        if (savedWordNumber != 0) {
+          Get.offNamed(
+            MY_VOCA_PATH,
+            arguments: {MY_VOCA_TYPE: MyVocaEnum.MY_WORD},
+            preventDuplicates: false,
+          );
+          adController!.showRewardedInterstitialAd();
+        }
       }
     }
   }
