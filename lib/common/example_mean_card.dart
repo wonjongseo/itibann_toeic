@@ -153,30 +153,6 @@ class _WordExampleMeanCardState extends State<WordExampleMeanCard> {
                 ),
               ],
             ),
-            // TextButton(
-            //   style: TextButton.styleFrom(padding: EdgeInsets.zero),
-            //   onPressed: () async {
-            //     setState(() {
-            //       meanText = SizedBox(
-            //         width: MediaQuery.of(context).size.width - 150,
-            //         child: const LinearProgressIndicator(),
-            //       );
-            //     });
-            //     String tmp =
-            //         await widget.wordApiDatasource.getWordMean(widget.example);
-            //     setState(() {
-            //       meanText = Text(tmp,
-            //           style: Theme.of(context).textTheme.bodySmall!.copyWith(
-            //                 color: Colors.black,
-            //               ));
-            //     });
-            //   },
-            //   child: Column(
-            //     children: [
-
-            //     ],
-            //   ),
-            // ),
             const SizedBox(height: 5),
             meanText,
             const SizedBox(height: 15),

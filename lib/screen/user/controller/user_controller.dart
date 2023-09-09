@@ -68,10 +68,6 @@ class UserController extends GetxController {
     update();
   }
 
-  bool isUserFake() {
-    return user.isFake;
-  }
-
   bool isUserPremieum() {
     return user.isPremieum;
   }

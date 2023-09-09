@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jonggack_toeic_japanese/common/admob/controller/ad_controller.dart';
-import 'package:jonggack_toeic_japanese/common/widget/apple_store_icon.dart';
 import 'package:jonggack_toeic_japanese/routes.dart';
 import 'package:jonggack_toeic_japanese/screen/home/home_screen.dart';
 import 'package:jonggack_toeic_japanese/common/admob/banner_ad/test_banner_ad_controller.dart';

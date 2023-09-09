@@ -34,7 +34,6 @@ class TestBannerAdController extends GetxController {
         onAdOpened: (ad) => log('onTestAdOpened'),
         onAdClosed: (ad) => log('onTestAdClosed'),
       ),
-      // size: AdSize.banner,
       size: AdSize.fullBanner,
       adUnitId: adUnitId.banner[GetPlatform.isIOS ? 'ios' : 'android']!,
       request: const AdRequest(),

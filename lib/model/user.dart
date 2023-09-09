@@ -6,7 +6,6 @@ part 'user.g.dart';
 @HiveType(typeId: UserTypeId)
 class User extends HiveObject {
   static String boxKey = 'user_key';
-  bool isFake = false;
 
   @HiveField(0)
   int heartCount;
@@ -16,8 +15,8 @@ class User extends HiveObject {
   @HiveField(4)
   List<int> currentJlptWordScroes = [];
 
-  // bool isPremieum = true;
-  bool isPremieum = false;
+  bool isPremieum = true;
+  // bool isPremieum = false;
 
   User({
     required this.heartCount,

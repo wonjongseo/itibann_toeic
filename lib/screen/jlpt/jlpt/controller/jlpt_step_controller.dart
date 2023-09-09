@@ -111,12 +111,4 @@ class JlptStepController extends GetxController {
   }
 
   // ---------
-
-  bool restrictN1SubStep(int subStep) {
-    if (userController.user.isFake) {
-      return false;
-    }
-
-    return false;
-  }
 }

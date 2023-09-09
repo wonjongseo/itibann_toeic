@@ -44,7 +44,6 @@ class CalendarStepSceen extends StatelessWidget {
       bottomNavigationBar: const GlobalBannerAdmob(),
       appBar: AppBar(
         title: Text(title),
-        // actions: const [HeartCount()],
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -92,14 +91,12 @@ class CalendarStepSceen extends StatelessWidget {
                   }
 
                   return CalendarCard(
-                    isAabled: controller.userController.isUserFake() ||
+                    isAabled:
                         (controller.jlptSteps[subStep - 1].isFinished ?? false),
                     jlptStep: controller.jlptSteps[subStep],
                     onTap: () {
                       // 무료버전일 경우.
-                      if (!controller.restrictN1SubStep(subStep)) {
-                        controller.goToStudyPage(subStep, isSeenTutorial);
-                      }
+                      controller.goToStudyPage(subStep, isSeenTutorial);
                     },
                   );
                 },

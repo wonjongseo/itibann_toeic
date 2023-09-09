@@ -22,7 +22,6 @@ class AdUnitId {
 
       banner = {
         'ios': 'ca-app-pub-9712392194582442/2938021192', //ok
-
         'android': 'ca-app-pub-9712392194582442/5993830882' //ok
       };
 
